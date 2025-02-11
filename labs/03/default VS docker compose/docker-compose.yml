@@ -1,0 +1,6 @@
+services:
+  northwindstore.app:
+    image: ${DOCKER_REGISTRY-}northwindstoreapp
+    build:
+      context: .
+      dockerfile: NorthwindStore.App/Dockerfile
