@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  northwindstore.app:
+    image: ${DOCKER_REGISTRY-}northwindstoreapp
+    build:
+      context: .
+      dockerfile: NorthwindStore.App/Dockerfile
+      args:
+        - configuration=Debug
+    ports: 
+      - "5000:5000"
+    networks:
+      - northwindstore-network 
+
+  northwindstore.db:
+    image: ${DOCKER_REGISTRY-}northwindstoredb
+    build:
+      context: ../labs/01/sql
+      dockerfile: Dockerfile
+    ports: 
+      - "51446:1433"
+    networks:
+      - northwindstore-network 
+
+networks:
+  northwindstore-network:
+    driver: bridge  
