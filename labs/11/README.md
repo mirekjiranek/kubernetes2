@@ -11,7 +11,7 @@ Cílem tohoto labu je založit __Azure Kubernetes Service__ cluster.
 3. Najděte si přesný název Azure resource group, ve které je Azure Container Registry, a spusťte tento příkaz:
 
 ```
-az aks create --resource-group <RESOURCE_GROUP> --name <CLUSTER_NAME> --node-count 1 --node-vm-size Standard_D2s_v4 --node-osdisk-size 32 --generate-ssh-keys --location westeurope --kubernetes-version 1.28.5
+az aks create --resource-group <RESOURCE_GROUP> --name <CLUSTER_NAME> --node-count 1 --node-vm-size Standard_D2s_v4 --node-osdisk-size 32 --generate-ssh-keys --location westeurope --kubernetes-version 1.32.0
 ```
 
 4. Přihlaste `kubectl` do clusteru pomocí tohoto příkazu:
