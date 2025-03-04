@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-service
+  labels:
+    app: northwindstore
+    component: app
+spec:
+  selector:
+    app: northwindstore
+    component: app
+  ports:
+  - protocol: TCP
+    port: 5001
+    targetPort: 80
+  type: LoadBalancer
